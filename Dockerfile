@@ -4,8 +4,7 @@ COPY . /go/src/shuZhiNet
 WORKDIR /go/src/shuZhiNet
 RUN go get && go build
 
-FROM alpine
-MAINTAINER longfangsong@icloud.com
+FROM redis
 COPY --from=builder /go/src/shuZhiNet/shuZhiNet /shuZhiNet
 WORKDIR /
 CMD ./shuZhiNet
