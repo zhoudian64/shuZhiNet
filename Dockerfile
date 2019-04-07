@@ -7,5 +7,6 @@ RUN go get && go build
 FROM redis
 COPY --from=builder /go/src/shuZhiNet/shuZhiNet /shuZhiNet
 WORKDIR /
+CMD ls
 CMD ./shuZhiNet
 EXPOSE 8000
